@@ -1,0 +1,225 @@
+body {
+    padding-top: 50px;
+}
+
+/* ヘッダー全体 */
+.header-nav {
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    background-color: #333;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    width: 100%;
+}
+.header-nav > ul {
+    display: flex;
+    justify-content: center;    /* 横揃え */
+    align-items: center;    /* 縦そろえ */
+    list-style: none;
+    gap: 40px;  /* 要素同士の隙間が空く*/
+    padding: 25px 0;
+    margin: 0;  /* 余白*/
+    color: white;
+    }
+
+.header-nav > ul > li {
+    position: relative;
+}
+
+.select-button {
+    margin-left: auto;
+}
+
+/* Qのリスト */
+.q-area {
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.q-list {
+    list-style: none;
+    padding: 10px;
+}
+
+.q-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    border: 2px solid #5ebae5;
+    border-radius: 10px;    /* 円形に近づいていく */
+    padding: 20px;
+    margin-bottom: 15px;
+}
+
+/* 編集ボタン */
+.edit-btn {
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+/* 削除ボタン */
+.delete-btn {
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+/* 決定ボタン */
+.decide-btn {
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+/* カーソルを合わせるとボタンON */
+.q-list li:hover .edit-btn {
+    opacity: 1;
+}
+.q-list li:hover .delete-btn {
+    opacity: 1;
+}
+.q-list li:hover .decide-btn {
+    opacity: 1;
+}
+
+
+/* カテゴリータグ */
+.category-tag {
+    background-color: #eee;
+    padding: 3px 9px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    white-space: nowrap;    /* 改行されないように */
+}
+
+/* レベルタグ */
+.level-tag {
+    color: #5ebae5;
+    font-weight: bold;  /* 文字の太さ */
+    white-space: nowrap;
+}
+
+/* Q本文テキスト */
+.q-text {
+    flex-grow: 1;
+    font-size: 1.1rem;
+}
+
+
+/* 新規作成ポップアップ */
+.new-modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+    background-color: rgba(0,0,0,0.5);
+}
+
+.new-register {
+    background-color: white;
+    margin: 15% auto;
+    padding: 20px;
+    border-radius: 8px;
+    width: 300px;
+}
+
+.new-content {
+    display: flex;
+    flex-direction: column; /* 要素を縦に並べる */
+    text-align: center; /* 見出しやボタンも中央揃えにする */
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10vh;
+    padding: 15px;
+    gap: 5px;
+}
+
+.register-btn {
+    cursor: pointer;
+    font-size: 15px;
+}
+.new-close-btn {
+    cursor: pointer;
+}
+
+/* 編集ポップアップ */
+.edit-modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+    background-color: rgba(0,0,0,0.5);
+}
+
+.edit {
+    background-color: white;
+    margin: 15% auto;
+    padding: 20px;
+    border-radius: 8px;
+    width: 300px;
+}
+
+.edit-content {
+    display: flex;
+    flex-direction: column; /* 要素を縦に並べる */
+    text-align: center; /* 見出しやボタンも中央揃えにする */
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10vh;
+    padding: 15px;
+    gap: 5px;
+}
+
+.edit-close-btn {
+    cursor: pointer;
+}
+
+/* 削除確認ポップアップ */
+.delete-modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+}
+
+.delete-content {
+    background-color: white;
+    margin: 15% auto;
+    padding: 20px;
+    border-radius: 8px;
+    width: 300px;
+}
+
+.delete-confirmation {
+    display: flex;
+    justify-content: center;
+}
+
+.deleteBtn-container {
+    display: flex;
+    justify-content: center;    /* 中央に寄せる */
+    gap: 20px;
+}
+
+.delete-yes {
+    cursor: pointer;    /* 要素にマウスを合わせるとカーソルが変わる */
+    font-size: 15px;
+}
+.delete-no {
+    cursor: pointer;
+    font-size: 15px;
+}
+.delete-close-btn {
+    cursor: pointer;
+}

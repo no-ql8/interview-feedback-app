@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8" />
+        <title>音声認識+AI</title>
+    <!-- 外部CSSファイルの読み込み-->
+    <link rel ="stylesheet" href = "style_regi.css" />
+    </head>
+
+    <body>
+        <header class="global-header">
+            <nav class="header-nav">
+                <ul>
+                    <li class="category-select">
+                        <label for="category-search">カテゴリ：</label>
+                        <select id="category-search" name="category">
+                            <option value="">-- 選択してください --</option>
+                            <option value="プログラミングに関して">プログラミングに関して</option>
+                            <option value="サーバー運営に関して">サーバー運営に関して</option>
+                            <option value="食品衛生に関して">食品衛生に関して</option>
+                            <option value="カテゴリ4">カテゴリ4</option>
+                            <option value="カテゴリ5">カテゴリ5</option>
+                        </select>
+                    </li>
+                    <li class="level-select">
+                        <label for="level-search">レベル：</label>
+                        <select id="level-search" name="level">
+                            <option value="">-- 選択してください --</option>
+                            <option value="1">レベル1</option>
+                            <option value="2">レベル2</option>
+                            <option value="3">レベル3</option>
+                            <option value="4">レベル4</option>
+                            <option value="5">レベル5</option>
+                        </select>
+                    </li>
+
+                    <li class="search">
+                        <button id="search-btn" class="search-btn">検索</button>
+                    </li>
+                    <li class="searchReset">
+                        <button id="searchReset-btn" class="searchReset-btn">リセット</button>
+                    </li>
+                    <li class="dialog-open">
+                        <button id="open-btn" class="open-btn">新規登録</button>
+                    </li>
+                    <li class=select-button">
+                        <a href="../speech_reco/speech_reco.html">
+                            <button>戻る</button>
+                        </a>
+                    </li>
+                </ul>
+
+            </nav>
+        </header>
+
+        <div class="q-area">
+            <ul id="q-list" class="q-list">
+            </ul>
+        </div>
+
+        <div id="newModal" class="new-modal">
+            <div class="new-register">
+                <span class="new-close-btn">&times;</span>
+                <div class="new-content">
+                    <h2>新しい質問を登録</h2>
+                    <div class="category-select">
+                        <label for="category-new">カテゴリ：</label>
+                        <select id="category-new" name="category">
+                            <option value="プログラミングに関して">プログラミングに関して</option>
+                            <option value="サーバー運営に関して">サーバー運営に関して</option>
+                            <option value="食品衛生に関して">食品衛生に関して</option>
+                            <option value="カテゴリ4">カテゴリ4</option>
+                            <option value="カテゴリ5">カテゴリ5</option>
+                        </select>
+                    </div>
+                    <div class="level-select">
+                        <label for="level-new">レベル：</label>
+                        <select id="level-new" name="level">
+                            <option value="1">レベル1</option>
+                            <option value="2">レベル2</option>
+                            <option value="3">レベル3</option>
+                            <option value="4">レベル4</option>
+                            <option value="5">レベル5</option>
+                        </select>
+                    </div>
+                    <input  id="q-text" type="text" placeholder="質問を入力してください">
+                    <input id ="a-text" type="text" placeholder="解答を入力してください">
+                    <button  id="register-btn" class="register-btn">登録</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="editModal" class="edit-modal">
+            <div class="edit">
+                <span class="edit-close-btn">&times;</span>
+                <div class="edit-content">
+                    <h2>質問を編集する</h2>
+                    <div class="category-select">
+                        <label for="category-edit">カテゴリ：</label>
+                        <select id="category-edit" name="category">
+                            <option value="プログラミングに関して">プログラミングに関して</option>
+                            <option value="サーバー運営に関して">サーバー運営に関して</option>
+                            <option value="食品衛生に関して">食品衛生に関して</option>
+                            <option value="カテゴリ4">カテゴリ4</option>
+                            <option value="カテゴリ5">カテゴリ5</option>
+                        </select>
+                    </div>
+                    <div class="level-select">
+                        <label for="level-edit">レベル：</label>
+                        <select id="level-edit" name="level">
+                            <option value="1">レベル1</option>
+                            <option value="2">レベル2</option>
+                            <option value="3">レベル3</option>
+                            <option value="4">レベル4</option>
+                            <option value="5">レベル5</option>
+                        </select>
+                    </div>
+                    <input id="text-edit" type="text" placeholder="質問を入力してください">
+                    <input id ="answer-edit" type="text" placeholder="解答を入力してください">
+                    <button  id="newEditBtn" class="register-btn">登録</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="delete_modal" class="delete-modal">
+            <div class="delete-content">
+                <span class="delete-close-btn">&times;</span>
+                <div class="delete-confirmation">
+                    <h3>本当にこの質問を削除しますか？</h3>
+                </div>
+                <div class="deleteBtn-container">
+                    <button id="delete-yes" class="delete-yes">はい</button>
+                    <button id="delete-no" class="delete-no">いいえ</button>
+                </div>
+            </div>
+        </div>
+
+        <!--外部JavaScriptファイルの読み込み-->
+        <script src="main.js"></script>
+    </body>
+</html>

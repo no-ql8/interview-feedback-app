@@ -1,0 +1,151 @@
+/* すべての大枠（コンテナ） */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* 質問ボックス */
+.question-box {
+    border: 2px solid #5ebae5;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 600px;
+}
+
+/* 回答ボックス */
+.answer-box {
+    border: 2px solid #5ebae5;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 600px;
+    gap: 10px;
+}
+.answer-box span {
+    font-size: 18px;
+    white-space: nowrap;
+}
+
+/* テキスト入力部分 */
+#answer-input {
+    flex-grow: 1;
+    border: none;
+    outline: none;
+    font-size: 18px;
+    margin-right: 0;
+    min-width: 0;
+}
+
+/* アイコン */
+.icons ul {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    list-style: none;
+    padding: 0;
+}
+.icons li {
+    text-align: center;
+    font-size: 0.8em;
+    color: #333;
+}
+
+.icons img.icon-img {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto 2px auto;
+}
+
+/* AIレビュー */
+.review-area {
+    background-color: #e6f1fa;
+    border: 2px solid #5ebae5;
+    border-radius: 30px;
+    text-align: center;
+    padding: 20px;
+    width: 100%;
+    max-width: 600px;
+}
+
+/* ポップアップ */
+.modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hidden {
+    display: none;
+}
+
+.modal-content {
+    background: #fff;
+    width: 350px;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    position: relative;
+}
+
+.close-btn {
+    background: transparent;
+    border: none;
+    font-size: 18px;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    cursor: pointer;
+}
+
+.mic-btn {
+    font-size: 50px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    margin-bottom: 10px;
+    transition: 0.2s;
+}
+
+.mic-gray{color: #666}
+.mic-red{color:red;}
+
+.timer {
+    margin-top: 5px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+textarea {
+    width: 100%;
+    margin-top: 10px;
+    padding: 8px;
+    border: none;
+}
+textarea:focus {
+    outline: none;
+}
+
+.btn-row {
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+}

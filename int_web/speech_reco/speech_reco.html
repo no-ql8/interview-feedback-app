@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>音声認識+生成AI</title>
+  <!-- 外部CSSファイルの読み込み-->
+  <link rel ="stylesheet" href = "style_reco.css" />
+</head>
+<body>
+    <div class="container">
+        <div class="question-box">
+            <div id="text-box" class="question-text"></div>
+            <!--
+            <span class="question-text"> Q: C言語ってなんですか？</span>
+            -->
+            <a href="../registration_screen/screen_index.html">
+                <button class="select-button">選ぶ</button>
+            </a>
+        </div>
+        <div  class="answer-box">
+            <span>A: </span>
+            <input id="answer-input" type="text" value="" placeholder="回答を入力して下さい">
+        <div class="icons">
+            <ul>
+                <li>
+                    <img id="openRecordPopup" class="icon-img" src="mic_icon.png" alt="マイク">
+                </li>
+                <li>
+                    <img id="send-answer" class="icon-img" src="paper%20jett_icon.png" alt="送信">
+                </li>
+            </ul>
+        </div>
+        </div>
+        <div  class="review-area">
+            <h2>AIによるレビュー</h2>
+            <p id="review-box" class="status"></p>
+        </div>
+
+    </div>
+
+    <div id="recordModal" class="modal hidden">
+        <div class="modal-content">
+
+            <button class="close-btn" id="closePopup">×</button>
+
+            <div id="screen-record">
+                <button class="mic-btn mic-gray" id="micBtn">🎙</button>
+                <p id="recordMessage">マイクボタンを押してください</p>
+                <div id="timer" class="timer hidden">残り　00:15</div>
+            </div>
+
+            <div id="screen-result" class="hidden">
+                <textarea id="resultText" row="5" placeholder="=認識結果が表示されます"></textarea>
+                <div class="btn-row">
+                    <button id="decideBtn">決定</button>
+                    <button id="reboBtn">やり直す</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--外部JavaScriptファイルの読み込み-->
+    <script src="speech.js"></script>
+</body>
+</html>
+
+<script>
+console.log("speech_reco の JS 読み込み OK");
+</script>
