@@ -1,17 +1,20 @@
 
 from flask import Flask, request, jsonify
 from flask_cors import CORS
+from dotenv import load_dotenv
 import google.generativeai as genai
 
 import whisper
 import tempfile
 import os
 
+load_dotenv()
+
 
 app = Flask(__name__)
 CORS(app)
 
-genai.configure(api_key="AIzaSyCe9fQgbKvOj5ihgmilczWIfjHdVExxZlo")
+genai.configure(api_key=os.getenv("GEMINI_API_KEY"))
 model = genai.GenerativeModel("gemini-3-flash-preview")
 
 whisper_model = whisper.load_model("small")
